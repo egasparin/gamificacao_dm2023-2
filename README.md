@@ -25,5 +25,5 @@ Sistema de controle de registro de reserva de quartos para hotel. Conta com regi
 5. Execute o aplicativo em um dispositivo físico conectado ao computador ou em um emulador de smartphone (android-emulator, genymotion..)
 
 ## Contribuidores
-- Eduardo Gasparin <https://github.com/egasparin>
-- Rodrigo Ribeiro  <https://github.com/rodrignucleo>
+- Eduardo Gasparin - <https://github.com/egasparin>
+- Rodrigo Ribeiro  - <https://github.com/rodrignucleo>
