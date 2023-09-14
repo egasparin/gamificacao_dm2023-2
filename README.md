@@ -1,5 +1,5 @@
 
-# Gamificacao_dm2023-2 - App de Controle para Reserva de Hotel
+# Gamificacao_DM2023-2 - App de Controle para Reserva de Hotel
 
 Sistema de controle de registro de reserva de quartos para hotel. Conta com registro de funcionário, hospede, quarto e reserva. Projeto desenvolvido em Flutter usando SQFlite e para a persistência dos dados SharedPreferences para armazenar configurações do usuário.
 
