@@ -10,8 +10,8 @@ ReservaModel _$ReservaModelFromJson(Map<String, dynamic> json) => ReservaModel(
       reservaId: json['reservaId'] as int?,
       dataEntrada: json['dataEntrada'],
       dataSaida: json['dataSaida'],
-      hospedes: json['hospedes'] as List<dynamic>,
-      quartos: json['quartos'] as List<dynamic>,
+      hospedeSelected: json['hospedeSelected']as int,
+      quartoSelected: json['quartoSelected'] as int,
     );
 
 Map<String, dynamic> _$ReservaModelToJson(ReservaModel instance) =>
@@ -19,6 +19,6 @@ Map<String, dynamic> _$ReservaModelToJson(ReservaModel instance) =>
       'reservaId': instance.reservaId,
       'dataEntrada': instance.dataEntrada,
       'dataSaida': instance.dataSaida,
-      'quartos': instance.quartos,
-      'hospedes': instance.hospedes,
+      'hospedeSelected': instance.hospedeSelected,
+      'quartoSelected': instance.quartoSelected,
     };

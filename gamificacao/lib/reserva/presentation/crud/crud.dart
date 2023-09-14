@@ -28,8 +28,10 @@ class ReservaFormState extends State<ReservaForm> {
   final TextEditingController _entradaController = TextEditingController();
   final TextEditingController _saidaController = TextEditingController();
   List _hospedes = [];
+  int? _hospedeSelected;
   List<HospedeModel> _hospedesResgatados = [];
   List _quartos = [];
+  int? _quartoSelected;
   List<QuartoModel> _quartosResgatados = [];
 
   @override
@@ -37,8 +39,8 @@ class ReservaFormState extends State<ReservaForm> {
     if (widget.reservaModel != null) {
       _entradaController.text = widget.reservaModel!.dataEntrada;
       _saidaController.text = widget.reservaModel!.dataSaida;
-      _hospedes = widget.reservaModel!.hospedes;
-      _quartos = widget.reservaModel!.quartos;
+      _hospedeSelected = widget.reservaModel!.hospedeSelected;
+      _quartoSelected = widget.reservaModel!.quartoSelected;
     }
 
     _resgatarHospedes();
@@ -138,6 +140,7 @@ class ReservaFormState extends State<ReservaForm> {
                                     ),
                                     onTap: () {
                                       setState(() {
+                                        _hospedeSelected = hospede.hospedeId;
                                         if (isSelected) {
                                           _hospedes.remove(hospede.hospedeId);
                                         } else {
@@ -214,6 +217,7 @@ class ReservaFormState extends State<ReservaForm> {
                                       ),
                                     ),
                                     onTap: () {
+                                      _quartoSelected = quarto.quartoId;
                                       setState(() {
                                         if (isSelected) {
                                           _quartos.remove(quarto.quartoId);
@@ -247,11 +251,12 @@ class ReservaFormState extends State<ReservaForm> {
 
                       if (_formKey.currentState!.validate()) {
                         final ReservaModel reserva = ReservaModel(
-                          dataEntrada: _entradaController.text,
-                          dataSaida: _saidaController.text,
-                          hospedes: _hospedes,
-                          quartos: _quartos,
-                        );
+                            dataEntrada: _entradaController.text,
+                            dataSaida: _saidaController.text,
+                            // hospedes: _hospedes,
+                            // quartos: _quartos,
+                            hospedeSelected: _hospedeSelected as int,
+                            quartoSelected: _quartoSelected as int);
 
                         if (widget.reservaModel == null ||
                             widget.reservaModel!.reservaId == null) {

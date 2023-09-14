@@ -10,3 +10,15 @@ class HospedeListDataSource {
     });
   }
 }
+
+class HospedeGetIdDataSource {
+  Future get({required int id}) async {
+    final db = await DatabaseSqflite.openDb();
+    final maps = await db.query(
+      hospedeTableName,
+      where: 'hospedeId = ?',
+      whereArgs: [id],
+    );
+    return maps;
+  }
+}

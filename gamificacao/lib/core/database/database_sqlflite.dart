@@ -8,6 +8,7 @@ const String adicionaisTableName = 'adicionais';
 
 class DatabaseSqflite {
   static Future<Database> openDb() async {
+    // await deleteDatabase(join(await getDatabasesPath(), 'gamificacao.db'));
     final db = await openDatabase(
       'gamificacao.db',
       version: 1,
@@ -35,7 +36,8 @@ class DatabaseSqflite {
         hospedeId INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT,
         sobrenome TEXT,
-        documento TEXT
+        documento TEXT,
+        contato TEXT
       )
     ''');
 
@@ -43,7 +45,9 @@ class DatabaseSqflite {
       CREATE TABLE $reservaTableName (
         reservaId INTEGER PRIMARY KEY AUTOINCREMENT,
         dataEntrada TEXT,
-        dataSaida TEXT
+        dataSaida TEXT,
+        hospedeSelected INTEGER,
+        quartoSelected INTEGER
       )
     ''');
 

@@ -94,7 +94,8 @@ class HospedeFormState extends State<HospedeForm> {
                               .insert(hospede: hospede);
                         } else {
                           // mas se ele ja existir, tem que fazer o update dos dados
-                          hospede.hospedeId = widget.hospedeModel!.hospedeId;
+                          hospede.hospedeId = 
+                          widget.hospedeModel!.hospedeId;
 
                           /// funcao original que chama o metodo da API
                           // await HospedeUpdateDataSource()

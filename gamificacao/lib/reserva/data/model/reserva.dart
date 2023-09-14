@@ -7,19 +7,25 @@ part 'reserva.g.dart';
 
 @JsonSerializable()
 class ReservaModel extends ReservaEntity {
-  final List quartos;
-  final List hospedes;
+  // final List quartos;
+  // final List hospedes;
+  final int hospedeSelected;
+  final int quartoSelected;
 
-  ReservaModel({
-    int? reservaId,
-    required dataEntrada,
-    required dataSaida,
-    required this.hospedes,
-    required this.quartos,
-  }) : super(
+  ReservaModel(
+      {int? reservaId,
+      required dataEntrada,
+      required dataSaida,
+      // required this.hospedes,
+      // required this.quartos,
+      required this.hospedeSelected,
+      required this.quartoSelected})
+      : super(
           reservaId: reservaId,
           dataEntrada: dataEntrada,
           dataSaida: dataSaida,
+          idHospede: hospedeSelected,
+          idQuarto: quartoSelected,
         );
 
   factory ReservaModel.fromJson(Map<String, dynamic> json) =>
